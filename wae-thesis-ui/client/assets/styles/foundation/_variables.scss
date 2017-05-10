@@ -1,0 +1,62 @@
+
+$default-font: 'PT Sans', sans-serif;
+$default-text-color: #808080;
+
+//font
+$icon-moon-url: '../fonts/icomoon/icomoon';
+$simple-line-icon-url: "../fonts/simple-line-icons/Simple-Line-Icons";
+
+//breakpoint
+$mobile--max-width: 425px;
+$tablet--min-width: 720px;
+$desktop--min-width: 1024px;
+
+//navigation bars
+$nav-bar--height: 55px;
+$nav-bar__background--color-white: #ffffff;
+$nav-bar__logo--span-color: #ff3b30;
+$nav-bar__logo-default-color: white;
+$nav-bar__link--default-color: #808080;
+$nav-bar__link--border-color: #ff3b30;
+$nav-bar__link--default-font-size: 15px;
+$nav-bar__logo--default-font-size: 30px;
+
+//home section
+$home__background--color: #707374;
+$home__paragraph--default-color: #e2e2e3;
+$home__header--default-color: #fefefe;
+
+//explore section
+$explore--upper-background-color: #ffffff;
+$explore--lower-background-color: #f1f1f1;
+$explore__header--default-color: #000000;
+
+//pricing section
+$pricing__background--color: #f1faff;
+
+//service section
+$service__background--color: #ffffff;
+
+//team section
+$team__background--color: #f1faff;
+
+//footer section
+$footer__background--color: #3f5267;
+$footer__text--default-color: #73879d;
+
+//button
+$button__height--large: 50px;
+$button__width--large: 180px;
+$button__height--small: 40px;
+$button__width--small: 150px;
+$button__background-color--default: #1fb5f6;
+$button--default-margin: 5px;
+$button__text--default-color: #fefefe;
+$button__text--default-font-size: 12px;
+
+//article
+$intro-article__height: 300px;
+$intro-article__width: 700px;
+$article__header--font-size: 35px;
+$article__header--default-color: #000000;
+$article__paragraph--default-color: #808080;

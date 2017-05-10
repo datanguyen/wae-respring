@@ -1,0 +1,64 @@
+
+
+@mixin border-radius-prefix($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+@mixin box-shadow-prefix($values) {
+  box-shadow: $values;
+  -webkit-box-shadow: $values;
+  -moz-box-shadow: $values;
+  -o-box-shadow: $values;
+}
+
+@mixin flex-box-prefix() {
+  display: flex;
+  display: -webkit-flex;
+}
+
+@mixin flex-flow-prefix($value) {
+  flex-flow: $value;
+  -webkit-flex-flow: $value;
+}
+
+@mixin justify-content-prefix($value) {
+  justify-content: $value;
+  -webkit-justify-content: $value;
+}
+
+@mixin align-content-prefix($value) {
+  align-content: $value;
+  -webkit-align-content: $value;
+}
+
+@mixin flex-prefix($values) {
+  flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+}
+
+@mixin  align-self-prefix($value) {
+  align-self: $value;
+  -webkit-align-self: $value;
+}
+
+@mixin placeholder-prefix {
+
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    font-family: $default-font;
+  }
+
+  input::-moz-placeholder,
+  textarea::-moz-placeholder {
+    font-family: $default-font;
+  }
+
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder {
+    font-family: $default-font;
+  }
+}
+

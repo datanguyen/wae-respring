@@ -1,0 +1,40 @@
+
+@import "../all";
+
+%drop-down-list {
+  position: relative;
+  display: inline-block;
+
+  .dd-list__title {
+    color: white;
+    padding: 1px 10px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dd-list__content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    @include border-radius-prefix(2px);
+
+    > * {
+      color: black;
+      text-decoration: none;
+      display: block;
+    }
+  }
+
+  &:hover .dd-list__content {
+    display: block;
+  }
+
+  &:hover .dd-list__title {
+    @include border-radius-prefix(2px);
+    border: 1px solid whitesmoke;
+  }
+}

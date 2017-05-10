@@ -1,0 +1,12 @@
+server:
+  port: 8001
+
+application:
+  service.defs: @service.def@
+  plugin.initializer: @plugin.initializer@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/ecmrproj?useSSL=false
+    data-username: root
+    data-password: W@3-Dr3@ming

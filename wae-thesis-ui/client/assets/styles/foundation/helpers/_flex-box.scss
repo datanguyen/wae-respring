@@ -1,0 +1,37 @@
+
+@import "../all";
+
+%display-flex {
+  @include flex-box-prefix;
+}
+
+%flex--perfect-centering {
+  > * {
+    margin: auto;
+  }
+}
+
+%flex--row--wrap {
+  @include flex-flow-prefix(row wrap);
+}
+
+%flex--row--nowrap {
+  @include flex-flow-prefix(row nowrap)
+}
+
+%flex--column-wrap {
+  @include flex-flow-prefix(column wrap);
+}
+
+%flex--horizontally {
+  @include justify-content-prefix(center);
+}
+
+%flex--vertically {
+  @include align-content-prefix(center);
+}
+
+%flex--vertically-horizontally {
+  @include justify-content-prefix(center);
+  @include align-content-prefix(center);
+}

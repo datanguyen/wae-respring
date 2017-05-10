@@ -1,0 +1,143 @@
+
+@import "../../assets/styles/app";
+
+
+.pricing-section {
+  font-size: 80%;
+  height: auto;
+  background-color: $pricing__background--color;
+
+  > * {
+    @extend %display-flex;
+
+    > * {
+      @include flex-prefix(1 100%);
+    }
+  }
+}
+
+.pricing-section--upper {
+  @extend %flex--perfect-centering;
+
+  .pricing-section__intro-article {
+    @extend %introduction-article--upper;
+    @extend %introduction--article-size;
+
+    > .article__header {
+      font-size: 30px;
+    }
+  }
+}
+
+.pricing-section--intermediate {
+  @extend %flex--row--wrap;
+  @extend %flex--horizontally;
+
+  > * {
+    margin: 10px;
+  }
+
+  .pricing-section__article--vertical {
+    @extend %vertical-article;
+    @extend %vertical-article--size;
+    margin-bottom: 20px;
+
+    .vertical-article__header {
+      font-size: 13px;
+    }
+  }
+
+  .pricing-section__price-tag {
+    color : #6d6d6d;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    > .price-tag {
+      font-size: 60px;
+      padding-right: 5px;
+    }
+
+    > .icon-money {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 5px;
+      top: -25px;
+      position: relative;
+      z-index: 3;
+    }
+  }
+
+  .vertical-article__button {
+
+    &--default {
+      @extend %button;
+      @extend %button--small;
+    }
+
+    &--red {
+      @extend %button;
+      @extend %button--small;
+      @extend %button--red;
+    }
+  }
+}
+
+.pricing-section--lower {
+  @extend %flex--horizontally;
+
+  > .paragraph--lower {
+    width: 530px;
+    margin: 50px 0 50px 0;
+    padding: 0 10px 10px 10px;
+  }
+}
+
+@media screen and (min-width: $desktop--min-width){
+  .pricing-section {
+    font-size: 100%;
+
+    > * > * {
+      @include flex-prefix(none);
+    }
+  }
+
+  .pricing-section--upper {
+
+    .pricing-section__intro-article {
+      > .article__header {
+        font-size: 35px;
+      }
+    }
+  }
+
+  .pricing-section--intermediate .pricing-section__article--vertical {
+    margin-bottom: 0;
+  }
+
+  .pricing-section--lower .paragraph--lower {
+    padding: 0;
+  }
+}
+
+
+@media screen and (min-width: $tablet--min-width) and (max-width: $desktop--min-width - 1) {
+
+  .pricing-section {
+    font-size: 100%;
+
+    .pricing-section--upper > *,
+    .pricing-section--intermediate > * {
+      @include flex-prefix(none);
+    }
+  }
+
+  .pricing-section--intermediate .pricing-section__article--vertical {
+    width: 335px;
+
+  }
+
+  .pricing-section--lower {
+    width: 80%;
+    margin: auto;
+  }
+}

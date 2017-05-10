@@ -1,0 +1,18 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title React/Dedux Demo
+        link(rel='shortcut icon', href='/assets/images/app.ico')
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css")
+        link(href='https://fonts.googleapis.com/css?family=Macondo', rel='stylesheet')
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+        link(href='/assets/styles/app.css', rel='stylesheet', type='text/css', charset='UTF-8')
+    body
+        #app(style='width:100%; height:100%; margin: 0; padding: 0')
+        script(type='text/javascript').
+            window.__INITIAL_STATE__ = !{JSON.stringify(initialState)};
+        script(src='/js/app.js')

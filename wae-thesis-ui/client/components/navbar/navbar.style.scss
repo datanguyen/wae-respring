@@ -1,0 +1,58 @@
+@import "../../assets/styles/foundation/all";
+@import "../../assets/styles/app";
+
+.nav-bar--fixed {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(37, 47, 62);
+  position: fixed;
+  width: 100%;
+  color: $nav-bar__logo-default-color;
+  height: 55px;
+  z-index: 1000000;
+}
+
+.nav-bar__logo--left-fixed {
+  @extend %nav-bar__element;
+  float: left;
+  font-family: 'Macondo', cursive;
+  font-size: $nav-bar__logo--default-font-size;
+  font-weight: bolder;
+  padding-left: 25px;
+  letter-spacing: 4px;
+  > .nav-bar--red {
+    color: $nav-bar__logo--span-color;
+  }
+}
+
+.nav-bar__list--right {
+  @extend %nav-bar__element;
+}
+
+.nav-bar__link--default {
+  @extend %link;
+  display: block;
+  color: white;
+
+  &:hover {
+    color: white;
+    border-bottom: 1px solid white;
+  }
+}
+
+%nav-bar__element {
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.btn-yellow {
+  @extend %button--red;
+  @include border-radius-prefix(0);
+
+  &:hover {
+    color: white;
+    opacity: 0.9;
+  }
+}

@@ -1,0 +1,54 @@
+
+@import "../../assets/styles/app";
+
+.cate-bar__element {
+  @extend %display-flex;
+  @extend %flex--row--nowrap;
+  padding: 5px 0;
+  width: auto;
+}
+
+.cate-bar__element:hover {
+
+  .block__content--showed {
+
+    .cate-bar__element__title {
+      color: #ff6a00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .cate-bar__element__icon {
+      opacity: 1;
+      color: #ff6a00;
+    }
+  }
+
+  .block__content--dismissed {
+    display: block;
+    padding: 10px;
+    border-left: 1px solid black;
+  }
+}
+
+.block__content--showed {
+  width: 350px;
+}
+
+.block__content--dismissed {
+  background-color: white;
+  width: 400px;
+  display: none;
+  height: auto;
+}
+
+.cate-bar__element__title {
+  text-decoration: none;
+  color: black;
+}
+
+.cate-bar__element__icon {
+  float: right;
+  font-weight: lighter;
+  opacity: 0.3;
+}

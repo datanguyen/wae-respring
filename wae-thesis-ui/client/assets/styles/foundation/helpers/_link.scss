@@ -1,0 +1,15 @@
+
+@import "../all";
+
+%link {
+  display: block;
+  text-decoration: none;
+  padding: 5px 10px;
+  float: left;
+  color: $nav-bar__link--default-color;
+  font-size: $nav-bar__link--default-font-size;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
