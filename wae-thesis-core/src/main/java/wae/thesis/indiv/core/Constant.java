@@ -12,4 +12,7 @@ public class Constant {
     public static final String PRODUCT_SERVICE = "ProductServiceDef";
     public static final String USER_SERVICE = "UserServiceDef";
     public static final String SUPPLIER_SERVICE = "SupplierServiceDef";
+
+    public static final String SIGNIN_REQUEST_PATH = "/signin";
+    public static final String FILTER_REQUEST_PATH = "/account";
 }

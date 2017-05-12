@@ -14,7 +14,6 @@ import wae.thesis.indiv.api.item.ErrorCode;
 import wae.thesis.indiv.api.item.UserRole;
 import wae.thesis.indiv.api.model.ServiceInfo;
 import wae.thesis.indiv.core.plugins.PluginManager;
-import wae.thesis.indiv.core.plugins.PluginManagerImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;

@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.script.ScriptTemplateViewResolver;
  */
 
 @Configuration
-public class ViewConfig extends WebMvcConfigurerAdapter{
+public class ViewConfig extends WebMvcConfigurerAdapter {
     public static final String[] SCRIPTS = {
           "nashorn/ejs.min.js",
           "nashorn/polyfill.js",

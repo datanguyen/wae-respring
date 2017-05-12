@@ -12,13 +12,11 @@
     <artifactId>wae-thesis-model-api</artifactId>
     <name>WAE-Thesis-Model-API</name>
 
-
     <dependencies>
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.5</version>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.7.0</version>
         </dependency>
     </dependencies>
-
 </project>

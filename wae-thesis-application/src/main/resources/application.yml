@@ -7,6 +7,18 @@ application:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/ecmrproj?useSSL=false
-    data-username: root
-    data-password: W@3-Dr3@ming
+    url: jdbc:mysql://localhost:3306/wae?useSSL=false
+    username: root
+    password: W@3-Dr3@ming
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+jwt.config:
+  tokenExpiredTime: 30
+  refreshTokenExpiredTime: 60
+  tokenIssuer: https://github.com/ntdatjoker
+  tokenSigningKey: $2a$06$NKaevdMxo/hRD0vWeOKcsODY0AMHeWApFqaViUql481FzeYjKkCy6
+  tokenHeaderPrefix: Bearer

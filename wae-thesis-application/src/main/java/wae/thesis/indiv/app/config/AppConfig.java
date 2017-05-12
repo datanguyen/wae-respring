@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import wae.thesis.indiv.core.plugins.PluginManager;
 import wae.thesis.indiv.core.plugins.PluginManagerImpl;
 
@@ -21,16 +22,20 @@ public class AppConfig {
     @Value("${spring.datasource.url}")
     private String dataSourceUrl;
 
-    @Value("${spring.datasource.data-username}")
+    @Value("${spring.datasource.username}")
     private String dataSourceUsername;
 
-    @Value("${spring.datasource.data-password}")
+    @Value("${spring.datasource.password}")
     private String dataSourcePassword;
-
 
     @Bean
     public PluginManager pluginManager() {
         return new PluginManagerImpl(serviceDefsPatterns, dataSourceUrl,
               dataSourceUsername, dataSourcePassword);
+    }
+
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }
