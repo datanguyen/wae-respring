@@ -1,4 +1,3 @@
-
 @import "../../assets/styles/app";
 
 
@@ -41,9 +40,11 @@
     @extend %vertical-article;
     @extend %vertical-article--size;
     margin-bottom: 20px;
+    width: 300px;
+    height: 460px;
 
     .vertical-article__header {
-      font-size: 13px;
+      font-size: 25px;
     }
   }
 

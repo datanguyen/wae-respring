@@ -60,7 +60,6 @@
   @include border-radius-prefix(4px);
 
   .vertical-article__header {
-    text-transform: uppercase;
     color: $article__header--default-color;
     line-height: 150%;
     height: 50px;

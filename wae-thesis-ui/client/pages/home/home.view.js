@@ -16,7 +16,7 @@ export class HomeView extends React.Component {
                       <Col lg={2} styleName="upper--left">
                           <div styleName="home__drop-down-list">
                               <button styleName="dd-list__title"><b>Departments</b> <span className="caret"/></button>
-                              <div styleName="dd-list__content" className="animated bounceInLeft">
+                              <div styleName="dd-list__content">
                                   <CateBarComponent/>
                               </div>
                           </div>
