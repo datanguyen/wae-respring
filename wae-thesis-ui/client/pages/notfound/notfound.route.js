@@ -1,6 +1,6 @@
 import {NotFound} from './notfound.component'
 
 export const NotFoundRoute = {
-    path: '*',
+    path: '/error',
     component: NotFound
 }

@@ -33,8 +33,8 @@ export class NavbarView extends React.Component {
               <Col lg={4}>
                   <div styleName="nav-bar__list--right">
                       <Link styleName="nav-bar__link--default" to="/app/home">Home</Link>
-                      <Link styleName="nav-bar__link--default" to="/app/explore">Sign In</Link>
-                      <Link styleName="nav-bar__link--default" to="/app/explore">Sign Up Free</Link>
+                      <Link styleName="nav-bar__link--default" to="/signin">Sign In</Link>
+                      <Link styleName="nav-bar__link--default" to="/signup">Sign Up Free</Link>
                       <Link styleName="nav-bar__link--default" to="/app/explore">
                           <Glyphicon glyph="shopping-cart"/> Cart
                       </Link>
