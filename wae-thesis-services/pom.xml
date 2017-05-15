@@ -12,5 +12,11 @@
     <artifactId>wae-thesis-services</artifactId>
     <name>WAE-Thesis-Services</name>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>wae.thesis.indiv</groupId>
+            <artifactId>wae-thesis-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

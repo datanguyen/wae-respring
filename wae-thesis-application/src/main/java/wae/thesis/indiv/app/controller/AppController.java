@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import wae.thesis.indiv.api.behavior.ServiceBehavior;
 import wae.thesis.indiv.api.model.ServiceDef;
+import wae.thesis.indiv.api.model.ServiceInfo;
 import wae.thesis.indiv.core.plugins.PluginManager;
 import wae.thesis.indiv.core.plugins.PluginManagerImpl;
 
@@ -58,11 +59,13 @@ public class AppController {
 
         ServiceBehavior serviceBehavior = (ServiceBehavior) pluginManager.getService(ServiceBehavior.class);
         String path = serviceBehavior.buildPath(moduleId, subModuleId, functionId);
+        ServiceInfo serviceInfo = ServiceInfo.fromGETRequest(path, params);
 
         appState.put("moduleId", moduleId);
         appState.put("subModuleId", subModuleId);
         appState.put("functionId", functionId);
         appState.put("path", path);
+        appState.put("data", serviceBehavior.initService(serviceInfo));
 
         return "app";
     }

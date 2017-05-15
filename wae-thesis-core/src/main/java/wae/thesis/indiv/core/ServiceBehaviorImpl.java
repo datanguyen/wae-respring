@@ -105,6 +105,7 @@ public class ServiceBehaviorImpl implements ServiceBehavior {
         return initializer.initialize(serviceInfo);
     }
 
+    //TODO: Fix bug can access url without in app
     @Override
     public Object handlerAction(UserRole userRole, ServiceInfo serviceInfo) {
 

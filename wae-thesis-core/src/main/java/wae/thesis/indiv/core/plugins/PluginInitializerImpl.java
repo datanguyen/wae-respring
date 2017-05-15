@@ -2,6 +2,7 @@ package wae.thesis.indiv.core.plugins;
 
 import lombok.Getter;
 import org.skife.jdbi.v2.DBI;
+import wae.thesis.indiv.api.ApiFetcher;
 import wae.thesis.indiv.api.ServiceBinder;
 import wae.thesis.indiv.api.behavior.ServiceBehavior;
 import wae.thesis.indiv.api.model.ServiceDef;
@@ -36,11 +37,18 @@ public class PluginInitializerImpl implements PluginInitializer {
     private final ServiceBehavior serviceBehavior;
     private final DataSource dataSource;
 
-    public PluginInitializerImpl(String serviceDefPatterns, String dataSourceUrl,
-                                  String dataSourceUsername, String dataSourcePassword) {
+    private ApiFetcher apiFetcher;
+
+    PluginInitializerImpl(String serviceDefPatterns, String dataSourceUrl,
+                          String dataSourceUsername, String dataSourcePassword) {
+        initialize();
         this.serviceDefPatterns.addAll(Arrays.asList(serviceDefPatterns.split(",")));
         this.dataSource = new DataSource(dataSourceUrl, dataSourceUsername, dataSourcePassword);
         this.serviceBehavior = new ServiceBehaviorImpl(initServiceDefs(this.serviceDefPatterns), coreMessages);
+    }
+
+    private void initialize() {
+        this.apiFetcher = new ApiFetcher(coreMessages.getMessage("api.port"));
     }
 
     @Override
@@ -76,7 +84,7 @@ public class PluginInitializerImpl implements PluginInitializer {
 
         switch (name) {
             case Constant.PRODUCT_SERVICE:
-                serviceDef = new ProductServiceDef(new ProductBehaviorImpl());
+                serviceDef = new ProductServiceDef(new ProductBehaviorImpl(), apiFetcher);
                 break;
 
             case Constant.USER_SERVICE:

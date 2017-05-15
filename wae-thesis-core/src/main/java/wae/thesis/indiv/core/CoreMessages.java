@@ -40,6 +40,10 @@ public class CoreMessages {
         }
     }
 
+    public String getMessage(String key) {
+        return messageByKey.get(key);
+    }
+
     public String noServiceForPath(String path) {
         return String.format(messageByKey.get("no.service.def.path"), path);
     }

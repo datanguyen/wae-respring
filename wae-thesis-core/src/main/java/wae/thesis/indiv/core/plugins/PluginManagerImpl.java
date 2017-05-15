@@ -2,6 +2,7 @@ package wae.thesis.indiv.core.plugins;
 
 import lombok.Getter;
 import lombok.Setter;
+import wae.thesis.indiv.api.ApiFetcher;
 
 import javax.annotation.PostConstruct;
 
