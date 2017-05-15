@@ -1,15 +1,16 @@
 import React from 'react'
+import { Col, Alert } from 'react-bootstrap'
 import cssModules from 'react-css-modules'
-import { Col } from "react-bootstrap"
+import style from './food.style.scss'
 
-import style from './home.style.scss'
-import { CateBarComponent } from "../../components"
-import { Explore } from "../explore"
+import { CateBarComponent, ProductBox } from '../../../components'
 
-@cssModules(style, {errorWhenNotFound: false})
-export class HomeView extends React.Component {
+@cssModules(style, { errorWhenNotFound: false})
+export class FoodView extends React.Component {
+
   render() {
-    return (
+    let { category, products } = this.props.foodApi
+    return(
       <div>
         <section id="pricing" styleName="home-section">
           <section styleName="home-section--upper">
@@ -17,7 +18,7 @@ export class HomeView extends React.Component {
               <div styleName="home__drop-down-list">
                 <button styleName="dd-list__title"><b>Departments</b> <span className="caret"/></button>
                 <div styleName="dd-list__content">
-                  <CateBarComponent/>
+                  <CateBarComponent />
                 </div>
               </div>
             </Col>
@@ -47,8 +48,23 @@ export class HomeView extends React.Component {
             </Col>
           </section>
         </section>
-        <Explore />
+        <section id="pricing" styleName="pricing-section">
+          <section styleName="pricing-section--upper" style={{padding: "30px", fontSize: "100px"}}>
+            <h1 className="animated bounceInDown">All {category} products listed below!</h1>
+          </section>
+          <ProductBox products={products} />
+          <section styleName="pricing-section--lower">
+            <p styleName="paragraph--lower">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              commodo
+              ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+              parturient montes, nascetur ridiculus mus.<span styleName="color--red"> Learn More.</span></p>
+          </section>
+        </section>
       </div>
     )
   }
+}
+
+FoodView.propTypes = {
+  foodApi: React.PropTypes.object.isRequired
 }

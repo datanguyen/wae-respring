@@ -1,0 +1,57 @@
+@import "../../assets/styles/app";
+
+.product-box {
+  @extend %flex--row--wrap;
+  @extend %flex--horizontally;
+
+  > * {
+    margin: 10px;
+  }
+
+  .product-box_box {
+    @extend %vertical-article;
+    margin-bottom: 20px;
+    width: 300px;
+    height: auto;
+
+    .vertical-article__header {
+      font-size: 20px;
+      color: #252f3e;
+    }
+  }
+
+  .pricing-section__price-tag {
+    color : #6d6d6d;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    > .price-tag {
+      font-size: 60px;
+      padding-right: 5px;
+    }
+
+    > .icon-money {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 5px;
+      top: -25px;
+      position: relative;
+      z-index: 3;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop--min-width) {
+  .product-box .product-box_box {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: $tablet--min-width) and (max-width: $desktop--min-width - 1) {
+  .product-box .product-box_box {
+    width: 335px;
+    > * {
+      @include flex-prefix(none);
+    }
+  }
+}

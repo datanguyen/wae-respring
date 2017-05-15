@@ -67,7 +67,7 @@ export class SignInForm extends React.Component {
     let inputStyle ={ width: "300px", margin: "auto", display: "block" }
 
     return (
-      <form styleName="signin-section" className="animated slideInUp">
+      <form styleName="signin-section" className="animated rollIn">
         <h1 styleName="signin-section__header">
           <span style={{color: 'red'}}>W</span>A<span style={{color: 'blue'}}>D</span>E
         </h1>

@@ -1,11 +1,12 @@
-import {App} from './app'
+import { App } from './app'
 import {
   Home,
   HomeRoute,
   ExploreRoute,
   AboutRoute,
   NotFoundRoute,
-  SignInRoute
+  SignInRoute,
+  FoodRoute
 } from './pages'
 
 export const AppRoute = {
@@ -21,7 +22,8 @@ export const AppRoute = {
         ExploreRoute,
         AboutRoute,
         NotFoundRoute,
-        SignInRoute
+        SignInRoute,
+        FoodRoute
       ]
     }
   ]

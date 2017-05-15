@@ -10,6 +10,18 @@ const settings = merge(baseConfig.settings, {
 module.exports = merge(baseConfig, {
   settings,
   devtool: 'source-map',
+  devServer: {
+    hot: true,
+    inline: true,
+    progress: true,
+    proxy: {
+      '/*': {
+        target: 'http://localhost:8001',
+        secure: false,
+        prependPath: false
+      }
+    }
+  },
   entry: {
     app: [
       settings.webpackHotMiddleWare,

@@ -21,10 +21,26 @@ public class ProductServiceDef extends ServiceDef {
 
         addUnallowedRoles(UserRole.GUEST);
 
-        addSubService(new ServiceDef("fetch-product", "Fetch Product")
+        addSubService(new ServiceDef("food", "Food Products")
               .addUnallowedRoles(UserRole.GUEST)
               .addActionHandler(
-                    new Action("fetch-product", ActionType.UPDATE, UserRole.ADMINISTRATORS),
+                    new Action("view-food-products", ActionType.READ, UserRole.ADMINISTRATORS),
+                    new FetchProductAction()
+              )
+        );
+
+        addSubService(new ServiceDef("electronic", "Electronic Products")
+              .addUnallowedRoles(UserRole.GUEST)
+              .addActionHandler(
+                    new Action("view-electronic-products", ActionType.READ, UserRole.ADMINISTRATORS),
+                    new FetchProductAction()
+              )
+        );
+
+        addSubService(new ServiceDef("handmade", "Handmade Products")
+              .addUnallowedRoles(UserRole.GUEST)
+              .addActionHandler(
+                    new Action("view-handmade-products", ActionType.READ, UserRole.ADMINISTRATORS),
                     new FetchProductAction()
               )
         );

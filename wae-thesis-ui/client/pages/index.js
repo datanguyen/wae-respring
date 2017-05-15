@@ -4,3 +4,4 @@ export * from "./notfound"
 export * from "./home"
 export * from "./explore"
 export * from './signin'
+export * from './categories'

@@ -1,6 +1,6 @@
-import {combineReducers} from 'redux'
-import {dashboard} from './pages'
+import { combineReducers } from 'redux'
+import { dashboard, food } from './pages'
 
 export const AppReducer = combineReducers({
-    dashboard
+    dashboard, food
 })
