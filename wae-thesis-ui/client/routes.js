@@ -6,7 +6,9 @@ import {
   AboutRoute,
   NotFoundRoute,
   SignInRoute,
-  FoodRoute
+  FoodRoute,
+  ElectronicRoute,
+  HandmadeRoute
 } from './pages'
 
 export const AppRoute = {
@@ -23,8 +25,14 @@ export const AppRoute = {
         AboutRoute,
         NotFoundRoute,
         SignInRoute,
-        FoodRoute
+        FoodRoute,
+        ElectronicRoute,
+        HandmadeRoute
       ]
+    },
+    {
+      path: '/error',
+      component: NotFoundRoute
     }
   ]
 }

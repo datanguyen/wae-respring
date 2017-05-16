@@ -1,0 +1,148 @@
+@import "../../../assets/styles/app";
+
+.home-section {
+  height: auto;
+
+  > * {
+    @extend %display-flex;
+  }
+}
+
+.home-section--upper {
+  background-color: rgb(37, 47, 62);
+  height: 100px;
+  padding-top: 60px;
+  @include flex-flow-prefix(row nowrap);
+}
+
+.home__drop-down-list {
+  @extend %drop-down-list;
+  margin: 7px 0 0 10px;
+
+  .dd-list__title {
+    background-color: rgb(37, 47, 62);
+  }
+
+  .dd-list__content {
+    top: 24px;
+    min-width: 220px;
+    width: auto;
+    height: auto;
+
+    > * {
+      padding: 10px
+    }
+  }
+}
+
+.supplier__drop-down-list {
+  @extend .home__drop-down-list;
+  margin-left: 0;
+  padding-right: 10px;
+
+  .dd-list__content {
+    width: 160px;
+
+    > *:hover {
+      font-weight: bold;
+      color: #ff6a00;
+      -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.help__drop-down-list {
+  @extend .supplier__drop-down-list;
+}
+
+.link-helper--default {
+  @extend %link;
+  display: block;
+  color: #dadae5;
+  font-size: 13px;
+  margin-top: 4px;
+
+  &:hover {
+    color: white;
+    border-bottom: 1px solid white;
+  }
+}
+
+.pricing-section {
+  font-size: 80%;
+  height: auto;
+  background-color: $pricing__background--color;
+
+  > * {
+    @extend %display-flex;
+
+    > * {
+      @include flex-prefix(1 100%);
+    }
+  }
+}
+
+.pricing-section--upper {
+  @extend %flex--perfect-centering;
+
+  .pricing-section__intro-article {
+    @extend %introduction-article--upper;
+    @extend %introduction--article-size;
+
+    > .article__header {
+      font-size: 30px;
+    }
+  }
+}
+
+.pricing-section--lower {
+  @extend %flex--horizontally;
+
+  > .paragraph--lower {
+    width: 530px;
+    margin: 50px 0 50px 0;
+    padding: 0 10px 10px 10px;
+  }
+}
+
+@media screen and (min-width: $desktop--min-width){
+  .pricing-section {
+    font-size: 100%;
+
+    > * > * {
+      @include flex-prefix(none);
+    }
+  }
+
+  .pricing-section--upper {
+
+    .pricing-section__intro-article {
+      > .article__header {
+        font-size: 35px;
+      }
+    }
+  }
+
+  .pricing-section--lower .paragraph--lower {
+    padding: 0;
+  }
+}
+
+
+@media screen and (min-width: $tablet--min-width) and (max-width: $desktop--min-width - 1) {
+
+  .pricing-section {
+    font-size: 100%;
+
+    .pricing-section--upper > * {
+      @include flex-prefix(none);
+    }
+  }
+
+  .pricing-section--lower {
+    width: 80%;
+    margin: auto;
+  }
+}

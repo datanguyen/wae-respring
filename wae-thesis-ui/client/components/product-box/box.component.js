@@ -25,12 +25,11 @@ export class ProductBox extends React.Component {
                   <img src={product.productImgUrl} style={{width: '100%', height: '300px', maxWidth: '300px'}}/>
                 </p>
                 <MuiThemeProvider>
-                  <RaisedButton label="Sign In"
+                  <RaisedButton label="ADD TO CART"
                                 labelPosition="before"
                                 backgroundColor="#252f3e"
                                 labelColor="white"
                                 className="anoymynouse"
-                                buttonStyle={{width: "50px"}}
                                 style={{margin: "40px 0 10px 0"}}
                   />
                 </MuiThemeProvider>
