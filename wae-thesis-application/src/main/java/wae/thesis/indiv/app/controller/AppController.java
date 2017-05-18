@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import wae.thesis.indiv.api.behavior.ServiceBehavior;
 import wae.thesis.indiv.api.model.ServiceDef;
 import wae.thesis.indiv.api.model.ServiceInfo;
+import wae.thesis.indiv.app.user.UserSession;
 import wae.thesis.indiv.core.plugins.PluginManager;
 import wae.thesis.indiv.core.plugins.PluginManagerImpl;
 
@@ -61,6 +62,7 @@ public class AppController {
         String path = serviceBehavior.buildPath(moduleId, subModuleId, functionId);
         ServiceInfo serviceInfo = ServiceInfo.fromGETRequest(path, params);
 
+        appState.put("authenticate", new UserSession());
         appState.put("path", path);
         appState.put("data", serviceBehavior.initService(serviceInfo));
 

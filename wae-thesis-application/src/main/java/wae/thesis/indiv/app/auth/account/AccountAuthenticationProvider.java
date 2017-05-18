@@ -2,6 +2,7 @@ package wae.thesis.indiv.app.auth.account;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
@@ -44,8 +45,7 @@ public class AccountAuthenticationProvider implements AuthenticationProvider {
         Account account = accountRepository.findAccountByUsername(username);
 
         if (account == null || !bCryptPasswordEncoder.matches(password, account.getPassword())) {
-            throw new AuthenticationFailedException(Message.AUTHENTICATION_FAILED.getMessage(),
-                  ErrorCode.AUTHENTICATION_FAILED);
+            throw new BadCredentialsException("USERNAME_OR_PASSWORD_NOT_FOUND");
         }
 
         List<GrantedAuthority> authorities = Stream.of(account.getRoles().split(" "))

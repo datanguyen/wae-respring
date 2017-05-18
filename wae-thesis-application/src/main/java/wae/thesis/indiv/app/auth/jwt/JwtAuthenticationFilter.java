@@ -1,6 +1,7 @@
 package wae.thesis.indiv.app.auth.jwt;
 
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContext;
@@ -12,11 +13,13 @@ import wae.thesis.indiv.api.exception.TokenNotFound;
 import wae.thesis.indiv.api.item.ErrorCode;
 import wae.thesis.indiv.api.item.Message;
 import wae.thesis.indiv.api.token.RawAccessToken;
+import wae.thesis.indiv.app.auth.AnonymousToken;
 import wae.thesis.indiv.app.auth.TokenAuthenticationService;
 import wae.thesis.indiv.app.config.JwtConfig;
 import wae.thesis.indiv.app.config.SecurityConfig;
 import wae.thesis.indiv.core.Constant;
 
+import javax.security.auth.login.AccountNotFoundException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -42,7 +45,7 @@ public class JwtAuthenticationFilter extends AbstractAuthenticationProcessingFil
         String tokenPayload = request.getHeader(SecurityConfig.JWT_HEADER_PARAM);
 
         if (tokenPayload == null) {
-            throw new TokenNotFound(Message.TOKEN_NOT_FOUND.getMessage(), ErrorCode.TOKEN_NOT_FOUND);
+            return getAuthenticationManager().authenticate(AnonymousToken.getAnonymousToken());
         }
         RawAccessToken rawAccessToken = new RawAccessToken(tokenAuthenticationService.extract(tokenPayload));
 
@@ -62,7 +65,5 @@ public class JwtAuthenticationFilter extends AbstractAuthenticationProcessingFil
     protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response,
                                               AuthenticationException failed) throws IOException, ServletException {
         SecurityContextHolder.clearContext();
-        throw new AuthenticationFailedException(Message.AUTHENTICATION_FAILED.getMessage(),
-              ErrorCode.AUTHENTICATION_FAILED);
     }
 }

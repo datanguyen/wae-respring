@@ -18,29 +18,24 @@ public class ProductServiceDef extends ServiceDef {
     public ProductServiceDef(ProductBehavior productBehavior) {
         super("product", "Products", new ProductInitializer(productBehavior));
 
-        addUnallowedRoles(UserRole.GUEST);
-
         addSubService(new ServiceDef("food", "Food Products")
-              .addUnallowedRoles(UserRole.GUEST)
               .addActionHandler(
-                    new Action("view-food-products", ActionType.READ, UserRole.ADMINISTRATORS),
-                    new FetchProductAction()
+                    new Action("view-food-products", ActionType.READ, UserRole.GUEST),
+                    new FetchProductAction(productBehavior.getProductRepo())
               )
         );
 
         addSubService(new ServiceDef("electronic", "Electronic Products")
-              .addUnallowedRoles(UserRole.GUEST)
               .addActionHandler(
-                    new Action("view-electronic-products", ActionType.READ, UserRole.ADMINISTRATORS),
-                    new FetchProductAction()
+                    new Action("view-electronic-products", ActionType.READ, UserRole.GUEST),
+                    new FetchProductAction(productBehavior.getProductRepo())
               )
         );
 
         addSubService(new ServiceDef("handmade", "Handmade Products")
-              .addUnallowedRoles(UserRole.GUEST)
               .addActionHandler(
-                    new Action("view-handmade-products", ActionType.READ, UserRole.ADMINISTRATORS),
-                    new FetchProductAction()
+                    new Action("view-handmade-products", ActionType.READ, UserRole.GUEST),
+                    new FetchProductAction(productBehavior.getProductRepo())
               )
         );
     }

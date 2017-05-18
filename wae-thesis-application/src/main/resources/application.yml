@@ -17,7 +17,7 @@ spring:
       ddl-auto: update
 
 jwt.config:
-  tokenExpiredTime: 30
+  tokenExpiredTime: 60
   refreshTokenExpiredTime: 60
   tokenIssuer: https://github.com/ntdatjoker
   tokenSigningKey: $2a$06$NKaevdMxo/hRD0vWeOKcsODY0AMHeWApFqaViUql481FzeYjKkCy6

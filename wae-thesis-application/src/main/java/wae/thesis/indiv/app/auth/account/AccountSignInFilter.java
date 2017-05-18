@@ -3,6 +3,7 @@ package wae.thesis.indiv.app.auth.account;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -50,8 +51,7 @@ public class AccountSignInFilter extends AbstractAuthenticationProcessingFilter 
         String dto = request.getHeader(SecurityConfig.ACCOUNT_HEADER_PARAM);
 
         if (dto == null) {
-            throw new AuthenticationFailedException(Message.AUTHENTICATION_FAILED.getMessage(),
-                  ErrorCode.AUTHENTICATION_FAILED);
+            throw new BadCredentialsException("USERNAME_OR_PASSWORD_NOT_FOUND");
         }
 
         AccountDto accountDto = objectMapper.readValue(dto, AccountDto.class);
@@ -83,7 +83,6 @@ public class AccountSignInFilter extends AbstractAuthenticationProcessingFilter 
                                               AuthenticationException failed) throws IOException, ServletException {
         SecurityContextHolder.clearContext();
         response.setStatus(HttpStatus.UNAUTHORIZED.value());
-        throw new AuthenticationFailedException(Message.AUTHENTICATION_FAILED.getMessage(),
-              ErrorCode.AUTHENTICATION_FAILED);
+        response.getWriter().write("WAE_WARNING_UNAUTHORIZED_PERMISSION");
     }
 }
