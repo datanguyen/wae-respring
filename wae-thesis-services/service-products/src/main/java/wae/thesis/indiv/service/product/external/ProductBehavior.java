@@ -1,6 +1,4 @@
-package wae.thesis.indiv.service.product.internal.behavior;
-
-import wae.thesis.indiv.api.behavior.ServiceBehavior;
+package wae.thesis.indiv.service.product.external;
 
 /**
  * Created by Nguyen Tan Dat.

@@ -1,13 +1,12 @@
 package wae.thesis.indiv.service.product.internal;
 
-import wae.thesis.indiv.api.ApiFetcher;
 import wae.thesis.indiv.api.ServiceBinder;
 import wae.thesis.indiv.api.item.ActionType;
 import wae.thesis.indiv.api.item.UserRole;
 import wae.thesis.indiv.api.model.Action;
 import wae.thesis.indiv.api.model.ServiceDef;
 import wae.thesis.indiv.service.product.external.action.FetchProductAction;
-import wae.thesis.indiv.service.product.internal.behavior.ProductBehavior;
+import wae.thesis.indiv.service.product.external.ProductBehavior;
 
 /**
  * Created by Nguyen Tan Dat.
@@ -16,8 +15,8 @@ import wae.thesis.indiv.service.product.internal.behavior.ProductBehavior;
 @ServiceBinder(className = ProductServiceDef.class)
 public class ProductServiceDef extends ServiceDef {
 
-    public ProductServiceDef(ProductBehavior productBehavior, ApiFetcher apiFetcher) {
-        super("product", "Products", new ProductInitializer(productBehavior, apiFetcher));
+    public ProductServiceDef(ProductBehavior productBehavior) {
+        super("product", "Products", new ProductInitializer(productBehavior));
 
         addUnallowedRoles(UserRole.GUEST);
 

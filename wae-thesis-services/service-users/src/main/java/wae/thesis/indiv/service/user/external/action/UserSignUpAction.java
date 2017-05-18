@@ -24,16 +24,11 @@ public class UserSignUpAction extends UserAction {
     @Override
     public Object handle(ServiceInfo serviceInfo) {
         String sql = "SELECT * from ecmrproj.account";
-        Handle handle = null;
         List<Map<String, Object>> data = new ArrayList<>();
 
-        try {
-            handle = dbi.open();
+        try (Handle handle = dbi.open()) {
             Query<Map<String, Object>> q = handle.createQuery(sql);
             data = q.list();
-
-        } finally {
-            handle.close();
         }
 
         return data;

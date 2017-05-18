@@ -61,9 +61,6 @@ public class AppController {
         String path = serviceBehavior.buildPath(moduleId, subModuleId, functionId);
         ServiceInfo serviceInfo = ServiceInfo.fromGETRequest(path, params);
 
-        appState.put("moduleId", moduleId);
-        appState.put("subModuleId", subModuleId);
-        appState.put("functionId", functionId);
         appState.put("path", path);
         appState.put("data", serviceBehavior.initService(serviceInfo));
 

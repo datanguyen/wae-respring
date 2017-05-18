@@ -11,14 +11,13 @@ import wae.thesis.indiv.core.Constant;
 import wae.thesis.indiv.core.CoreMessages;
 import wae.thesis.indiv.core.ReflectionUtils;
 import wae.thesis.indiv.core.ServiceBehaviorImpl;
-import wae.thesis.indiv.service.product.external.ProductBehaviorImpl;
+import wae.thesis.indiv.service.product.internal.behavior.ProductBehaviorImpl;
 import wae.thesis.indiv.service.product.internal.ProductServiceDef;
 import wae.thesis.indiv.service.supplier.external.SupplierBehaviorImpl;
 import wae.thesis.indiv.service.supplier.internal.SupplierServiceDef;
 import wae.thesis.indiv.service.user.external.UserBehaviorImpl;
 import wae.thesis.indiv.service.user.internal.UserServiceDef;
 
-import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -78,13 +77,14 @@ public class PluginInitializerImpl implements PluginInitializer {
 
     private ServiceDef initService(Class expectedClass) {
         DBI dbi = getDataSource().getDbi();
+        ApiFetcher apiFetcher = getApiFetcher();
 
         String name = expectedClass.getSimpleName();
         ServiceDef serviceDef = null;
 
         switch (name) {
             case Constant.PRODUCT_SERVICE:
-                serviceDef = new ProductServiceDef(new ProductBehaviorImpl(), apiFetcher);
+                serviceDef = new ProductServiceDef(new ProductBehaviorImpl(apiFetcher, dbi));
                 break;
 
             case Constant.USER_SERVICE:

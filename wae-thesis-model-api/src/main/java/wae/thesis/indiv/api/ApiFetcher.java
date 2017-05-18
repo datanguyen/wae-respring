@@ -10,7 +10,6 @@ import com.mashape.unirest.request.HttpRequest;
  * Created by Nguyen Tan Dat.
  */
 
-
 public class ApiFetcher {
 
     private final String apiPort;
