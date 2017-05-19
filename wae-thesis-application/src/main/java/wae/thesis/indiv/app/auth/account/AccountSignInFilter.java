@@ -27,6 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -82,7 +83,6 @@ public class AccountSignInFilter extends AbstractAuthenticationProcessingFilter 
     protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response,
                                               AuthenticationException failed) throws IOException, ServletException {
         SecurityContextHolder.clearContext();
-        response.setStatus(HttpStatus.UNAUTHORIZED.value());
         response.getWriter().write("WAE_WARNING_UNAUTHORIZED_PERMISSION");
     }
 }

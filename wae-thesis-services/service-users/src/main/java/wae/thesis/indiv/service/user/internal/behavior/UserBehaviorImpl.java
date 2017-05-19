@@ -1,7 +1,7 @@
-package wae.thesis.indiv.service.user.external;
+package wae.thesis.indiv.service.user.internal.behavior;
 
-import wae.thesis.indiv.service.user.internal.behavior.UserBehavior;
-import wae.thesis.indiv.service.user.internal.behavior.UserRepository;
+import wae.thesis.indiv.service.user.external.UserBehavior;
+import wae.thesis.indiv.service.user.external.UserRepository;
 
 /**
  * Created by Nguyen Tan Dat.

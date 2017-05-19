@@ -8,7 +8,7 @@ import wae.thesis.indiv.api.model.Action;
 import wae.thesis.indiv.api.model.ServiceDef;
 import wae.thesis.indiv.service.user.external.action.UserSignInAction;
 import wae.thesis.indiv.service.user.external.action.UserSignUpAction;
-import wae.thesis.indiv.service.user.internal.behavior.UserBehavior;
+import wae.thesis.indiv.service.user.external.UserBehavior;
 
 /**
  * Created by Nguyen Tan Dat.
@@ -30,7 +30,7 @@ public class UserServiceDef extends ServiceDef {
         addSubService(new ServiceDef("sign-up", "Sign Up")
               .addAllowedRoles(UserRole.GUEST)
               .addActionHandler(
-                    new Action("sign-up", ActionType.READ, UserRole.GUEST),
+                    new Action("sign-up", ActionType.CREATE, UserRole.GUEST),
                     new UserSignUpAction(dbi))
         );
     }

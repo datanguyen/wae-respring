@@ -41,6 +41,13 @@ const initialState = {
   "moduleId": "product",
   "app": {
     "path": "/product/fetch-product",
+    "authenticate":{
+      "user":{
+        "username":"anonymousUser",
+        "authorities":null
+      },
+      "authenticated":false
+    },
     "subModuleId": "fetch-product",
     "functionId": null,
     "data": {

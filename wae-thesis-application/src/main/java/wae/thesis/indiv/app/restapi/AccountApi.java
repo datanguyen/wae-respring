@@ -18,4 +18,11 @@ public class AccountApi {
     public Object getAccount() {
         return new UserSession();
     }
+
+    @RequestMapping(path = "/authenticateAccount", method = {GET, POST, PUT, DELETE})
+    public Object authenticateAccount() {
+        return new UserSession();
+    }
+
+
 }

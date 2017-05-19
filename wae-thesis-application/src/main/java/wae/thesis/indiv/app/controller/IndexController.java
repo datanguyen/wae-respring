@@ -26,12 +26,23 @@ public class IndexController {
     }
 
     @RequestMapping(path = "/signin", method = {GET, POST, PUT, DELETE})
-    public String signIn() {
+    public String signIn(Model model) {
+        Map<String, Object> appState = new HashMap<>();
+        model.addAttribute("app", appState);
+        appState.put("authenticate", new UserSession());
         return "app";
     }
 
     @RequestMapping(path = "/signout", method = {GET, POST, PUT, DELETE})
     public String signOut() {
+        return "app";
+    }
+
+    @RequestMapping(path = "/signup", method = {GET, POST, PUT, DELETE})
+    public String signUp(Model model) {
+        Map<String, Object> appState = new HashMap<>();
+        model.addAttribute("app", appState);
+        appState.put("authenticate", new UserSession());
         return "app";
     }
 }

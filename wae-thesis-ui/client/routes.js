@@ -6,6 +6,7 @@ import {
   AboutRoute,
   NotFoundRoute,
   SignInRoute,
+  SignUpRoute,
   FoodRoute,
   ElectronicRoute,
   HandmadeRoute
@@ -25,6 +26,7 @@ export const AppRoute = {
         AboutRoute,
         NotFoundRoute,
         SignInRoute,
+        SignUpRoute,
         FoodRoute,
         ElectronicRoute,
         HandmadeRoute

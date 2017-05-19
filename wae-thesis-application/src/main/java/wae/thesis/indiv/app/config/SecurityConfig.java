@@ -22,7 +22,7 @@ import wae.thesis.indiv.app.auth.jwt.JwtAuthenticationProvider;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     public static final String ACCOUNT_HEADER_PARAM = "Account_Header_Param";
-    public static final String JWT_HEADER_PARAM = "X-Authorization";
+    public static final String JWT_HEADER_PARAM = "Authorization";
 
     private final AccountAuthenticationProvider accountAuthenticationProvider;
     private final JwtAuthenticationProvider jwtAuthenticationProvider;

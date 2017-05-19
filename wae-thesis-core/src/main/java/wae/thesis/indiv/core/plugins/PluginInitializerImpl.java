@@ -15,7 +15,7 @@ import wae.thesis.indiv.service.product.internal.behavior.ProductBehaviorImpl;
 import wae.thesis.indiv.service.product.internal.ProductServiceDef;
 import wae.thesis.indiv.service.supplier.external.SupplierBehaviorImpl;
 import wae.thesis.indiv.service.supplier.internal.SupplierServiceDef;
-import wae.thesis.indiv.service.user.external.UserBehaviorImpl;
+import wae.thesis.indiv.service.user.internal.behavior.UserBehaviorImpl;
 import wae.thesis.indiv.service.user.internal.UserServiceDef;
 
 import java.util.ArrayList;
