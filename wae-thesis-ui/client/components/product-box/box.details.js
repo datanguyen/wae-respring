@@ -7,7 +7,8 @@ export class BoxDetails extends React.Component {
     super(props)
     this.state = {
       viewDetailOpen: false,
-      addToCartOpen: false
+      addToCartOpen: false,
+      addMessage: ''
     }
   }
 
@@ -20,7 +21,14 @@ export class BoxDetails extends React.Component {
   }
 
   handleCartOpen() {
-    this.setState({ addToCartOpen: true })
+    let { productName, productPrice, productUrl} = this.props
+    let result = this.props.addProductCart({ productName, productPrice, productUrl })
+
+    if (result.type === 'ADD_FAILED') {
+      this.setState({ addToCartOpen: true, addMessage: `${productName} is already added`})
+    } else {
+      this.setState({ addToCartOpen: true, addMessage: `${productName} is added to your cart`})
+    }
   }
 
   handleCartRequestClose() {
@@ -43,7 +51,7 @@ export class BoxDetails extends React.Component {
     return (
       <div>
         <MuiThemeProvider>
-          <RaisedButton label="ADD TO CART"
+          <RaisedButton label="Add to Cart"
                         labelPosition="before"
                         backgroundColor="#252f3e"
                         labelColor="white"
@@ -52,7 +60,7 @@ export class BoxDetails extends React.Component {
           />
         </MuiThemeProvider>
         <MuiThemeProvider>
-          <RaisedButton label="VIEW DETAILS"
+          <RaisedButton label="View Detail"
                         labelPosition="before"
                         backgroundColor="#252f3e"
                         labelColor="white"
@@ -63,8 +71,8 @@ export class BoxDetails extends React.Component {
         <MuiThemeProvider>
           <Snackbar
             open={this.state.addToCartOpen}
-            message="Product added to your cart"
-            autoHideDuration={6000}
+            message={this.state.addMessage}
+            autoHideDuration={2000}
             bodyStyle={{backgroundColor: "black"}}
             onRequestClose={(e) => this.handleCartRequestClose(e)}
           />
@@ -92,5 +100,6 @@ export class BoxDetails extends React.Component {
 BoxDetails.propTypes = {
   productName: React.PropTypes.string.isRequired,
   productPrice: React.PropTypes.number.isRequired,
-  productUrl: React.PropTypes.string.isRequired
+  productUrl: React.PropTypes.string.isRequired,
+  addProductCart: React.PropTypes.func.isRequired
 }

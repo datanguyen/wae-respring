@@ -48,7 +48,7 @@ export class NavbarView extends React.Component {
         </Col>
         <Col lg={4}>
           <div styleName="nav-bar__list--right">
-            <Link styleName="nav-bar__link--default" to="/app/home">Home</Link>
+            <Link styleName="nav-bar__link--default" to="/">Home</Link>
             { authenticated ? userLinks : guestLinks }
             <CartComponent />
             </div>
@@ -59,5 +59,5 @@ export class NavbarView extends React.Component {
 }
 
 NavbarView.propTypes = {
-  authenticate: React.PropTypes.object.isRequired
+  authenticate: React.PropTypes.object.isRequired,
 }
