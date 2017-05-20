@@ -1,7 +1,8 @@
 import React from 'react'
-import { MuiThemeProvider, RaisedButton, Badge} from 'material-ui'
+import { MuiThemeProvider, RaisedButton, Badge } from 'material-ui'
 import cssModules from 'react-css-modules'
 import style from './box.style.scss'
+import { BoxDetails } from './box.details'
 
 @cssModules(style, {errorWhenNotFound: false})
 export class ProductBox extends React.Component {
@@ -24,15 +25,9 @@ export class ProductBox extends React.Component {
                 <p styleName="vertical-article__content--main">
                   <img src={product.productImgUrl} style={{width: '100%', height: '300px', maxWidth: '300px'}}/>
                 </p>
-                <MuiThemeProvider>
-                  <RaisedButton label="ADD TO CART"
-                                labelPosition="before"
-                                backgroundColor="#252f3e"
-                                labelColor="white"
-                                className="anoymynouse"
-                                style={{margin: "40px 0 10px 0"}}
-                  />
-                </MuiThemeProvider>
+                <BoxDetails productName={product.productName}
+                            productPrice={product.productPrice}
+                            productUrl={product.productImgUrl}/>
               </article>
             )
           })

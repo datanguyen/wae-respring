@@ -1,9 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router'
 import cssModules from 'react-css-modules'
-import {InputGroup, InputGroupButton, Input} from "reactstrap"
-import {Glyphicon, Col} from "react-bootstrap"
+import { InputGroup, InputGroupButton, Input} from "reactstrap"
+import { Glyphicon, Col } from "react-bootstrap"
 import style from "./navbar.style.scss"
+import { CartComponent } from '../cart'
 
 @cssModules(style, {errorWhenNotFound: false})
 export class NavbarView extends React.Component {
@@ -49,10 +50,8 @@ export class NavbarView extends React.Component {
           <div styleName="nav-bar__list--right">
             <Link styleName="nav-bar__link--default" to="/app/home">Home</Link>
             { authenticated ? userLinks : guestLinks }
-            <Link styleName="nav-bar__link--default" to="/app/explore">
-              <Glyphicon glyph="shopping-cart"/> Cart
-            </Link>
-          </div>
+            <CartComponent />
+            </div>
         </Col>
       </div>
     )

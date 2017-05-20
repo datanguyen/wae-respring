@@ -6,7 +6,7 @@ import style from './slideshow.style.scss'
 export class SlideShowView extends React.Component {
   render() {
     let imgUrls = [
-      require('../../assets/images/slide3.jpg'),
+      require('../../assets/images/slide5.jpg'),
       // require('../../assets/images/slide2.jpg'),
       // require('../../assets/images/slide3.jpg'),
       // require('../../assets/images/slide4.jpg')
