@@ -63,13 +63,23 @@ export class CartView extends React.Component {
               && <p style={{margin: "20px 0 0 40%", color: "red", fontWeight: "bolder"}}>
                 *You need to sign in before checkout</p>
               }
-              <RaisedButton label="Proceed to checkout"
+              {
+                this.props.authenticate.authenticated
+                && <RaisedButton label="Proceed to checkout"
+                                 labelPosition="before"
+                                 backgroundColor="#252f3e"
+                                 labelColor="white"
+                                 style={{margin: "10px 0 0 50%"}}
+                                 onTouchTap={() => this.handleCheckout()}
+                                 disabled={!this.props.authenticate.authenticated}
+                />
+              }
+              <RaisedButton label="Close"
                             labelPosition="before"
-                            backgroundColor="#252f3e"
                             labelColor="white"
-                            style={{margin: "10px 0 0 50%"}}
-                            onTouchTap={() => this.handleCheckout()}
-                            disabled={!this.props.authenticate.authenticated}
+                            secondary={true}
+                            style={{margin: "10px 0 0 76%"}}
+                            onTouchTap={() => this.handlerCartToggle()}
               />
             </List>
           </Drawer>

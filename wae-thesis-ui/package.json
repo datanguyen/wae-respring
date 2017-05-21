@@ -27,6 +27,7 @@
     }
   },
   "dependencies": {
+    "Validator": "^1.0.4",
     "axios": "^0.16.1",
     "bootstrap": "^3.3.*",
     "bootstrap-sass": "^3.3.7",
