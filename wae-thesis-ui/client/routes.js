@@ -9,7 +9,8 @@ import {
   SignUpRoute,
   FoodRoute,
   ElectronicRoute,
-  HandmadeRoute
+  HandmadeRoute,
+  CheckoutRoute
 } from './pages'
 
 export const AppRoute = {
@@ -29,7 +30,8 @@ export const AppRoute = {
         SignUpRoute,
         FoodRoute,
         ElectronicRoute,
-        HandmadeRoute
+        HandmadeRoute,
+        CheckoutRoute
       ]
     },
     {

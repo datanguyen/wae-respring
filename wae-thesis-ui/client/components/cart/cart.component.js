@@ -1,5 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { CartView } from './cart.view'
 import { deleteProductCart } from './cart.action'
 
@@ -10,7 +10,7 @@ export class CartComponent extends React.Component {
         return <CartView
           cart={this.props.cart}
           deleteProductCart={this.props.deleteProductCart}
-         authenticate={this.props.authenticate}
+          authenticate={this.props.authenticate}
         />
     }
 }

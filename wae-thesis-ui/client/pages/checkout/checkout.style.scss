@@ -1,0 +1,28 @@
+@import "../../assets/styles/app";
+
+.signin-section {
+  margin-top: 80px;
+  padding: 10px;
+  border: 1px solid #bab8b8;
+  background-color: white;
+  @include border-radius-prefix(2px);
+}
+
+.signin-section__header {
+  font-family: 'Macondo', cursive;
+  font-weight: bolder;
+  margin: 20px 0 20px 0;
+  text-align: center;
+}
+
+.signin-section_input > * {
+  margin: auto;
+  display: block;
+}
+
+.signin-section--failed {
+  color: red;
+  font-weight: bolder;
+  text-align: center;
+}
+

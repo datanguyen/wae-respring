@@ -1,5 +1,7 @@
 import React from 'react'
-import {MuiThemeProvider, RaisedButton, Drawer, List, Subheader, Divider} from 'material-ui'
+import { MuiThemeProvider, RaisedButton, Drawer, List, Subheader, Divider } from 'material-ui'
+import { Badge } from 'react-bootstrap'
+import { browserHistory } from 'react-router'
 import { CartElement } from './cart.element'
 
 export class CartView extends React.Component {
@@ -15,15 +17,21 @@ export class CartView extends React.Component {
     this.setState({cartOpen: !this.state.cartOpen})
   }
 
+  handleCheckout() {
+    this.setState({ cartOpen: false })
+    browserHistory.push('/app/product/checkout')
+  }
+
   render() {
     return (
       <div>
         <MuiThemeProvider>
-          <RaisedButton label={`Cart (${this.props.cart.length})`}
+          <RaisedButton label="Shopping Cart"
                         labelPosition="before"
                         backgroundColor="#252f3e"
                         labelColor="yellow"
-                        labelStyle={{fontWeight: "bolder"}}
+                        labelStyle={{fontWeight: "bolder", textTransform: "capital"}}
+                        icon={<Badge>{this.props.cart.length}</Badge> }
                         onTouchTap={() => this.handlerCartToggle()}
           />
         </MuiThemeProvider>
@@ -40,6 +48,7 @@ export class CartView extends React.Component {
               {
                 this.props.cart.map(product => {
                   let { productName, productPrice, productUrl } = product
+
                   return (
                     <CartElement
                       id={product.id}
@@ -59,7 +68,7 @@ export class CartView extends React.Component {
                             backgroundColor="#252f3e"
                             labelColor="white"
                             style={{margin: "10px 0 0 50%"}}
-                            onTouchTap={() => this.handlerCartToggle()}
+                            onTouchTap={() => this.handleCheckout()}
                             disabled={!this.props.authenticate.authenticated}
               />
             </List>

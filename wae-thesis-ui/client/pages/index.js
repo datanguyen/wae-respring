@@ -6,3 +6,4 @@ export * from "./explore"
 export * from './signin'
 export * from './signup'
 export * from './categories'
+export * from './checkout'

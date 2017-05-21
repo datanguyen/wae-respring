@@ -27,9 +27,11 @@ export class NavbarView extends React.Component {
     return (
       <div styleName="nav-bar--fixed">
         <Col lg={2}>
-          <div styleName="nav-bar__logo--left-fixed" className="animated swing">
-            <span styleName="nav-bar--red">W</span>A<span style={{color: 'yellow'}}>D</span>E
-          </div>
+          <Link to="/">
+            <div styleName="nav-bar__logo--left-fixed">
+              <span styleName="nav-bar--red">W</span>A<span style={{color: 'yellow'}}>D</span>E
+            </div>
+          </Link>
         </Col>
         <Col lg={6}>
           <div styleName="nav-bar__list--right">
@@ -48,7 +50,6 @@ export class NavbarView extends React.Component {
         </Col>
         <Col lg={4}>
           <div styleName="nav-bar__list--right">
-            <Link styleName="nav-bar__link--default" to="/">Home</Link>
             { authenticated ? userLinks : guestLinks }
             <CartComponent />
             </div>
