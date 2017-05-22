@@ -1,7 +1,7 @@
 package wae.thesis.indiv.api.model;
 
 import lombok.*;
-import wae.thesis.indiv.api.ApiMessages;
+import wae.thesis.indiv.api.util.ApiMessages;
 import wae.thesis.indiv.api.behavior.ActionHandler;
 import wae.thesis.indiv.api.behavior.ServiceInitializer;
 import wae.thesis.indiv.api.exception.CoreException;

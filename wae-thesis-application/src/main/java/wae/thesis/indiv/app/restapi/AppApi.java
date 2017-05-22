@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import wae.thesis.indiv.api.ApiMessages;
+import wae.thesis.indiv.api.util.ApiMessages;
 import wae.thesis.indiv.api.behavior.ServiceBehavior;
 import wae.thesis.indiv.api.exception.CoreException;
 import wae.thesis.indiv.api.exception.DataInvalidException;
@@ -95,8 +95,8 @@ public class AppApi {
 
         if (serviceInfo == null) {
             throw new CoreException(
-                  ApiMessages.unsupportedRequestMethod(requestMethod),
-                  ErrorCode.CORE_EXCEPTION);
+                    ApiMessages.unsupportedRequestMethod(requestMethod),
+                    ErrorCode.CORE_EXCEPTION);
         }
 
         return serviceInfo;
@@ -105,11 +105,11 @@ public class AppApi {
     private String getDataBody(HttpServletRequest request) {
         try {
             return request.getReader().lines()
-                  .reduce("", (accumulator, actual) -> accumulator + actual);
+                    .reduce("", (accumulator, actual) -> accumulator + actual);
         } catch (IOException e) {
             throw new DataInvalidException(
-                  ApiMessages.couldNotReadDataFromRequest(),
-                  ErrorCode.CORE_EXCEPTION);
+                    ApiMessages.couldNotReadDataFromRequest(),
+                    ErrorCode.CORE_EXCEPTION);
         }
 
     }

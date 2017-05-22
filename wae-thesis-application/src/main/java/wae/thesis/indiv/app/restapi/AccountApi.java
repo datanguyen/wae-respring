@@ -1,6 +1,5 @@
 package wae.thesis.indiv.app.restapi;
 
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import wae.thesis.indiv.app.user.UserSession;

@@ -107,16 +107,19 @@ export class CheckoutForm extends React.Component {
     let { isValid } = this.validateInput()
 
     if (!isValid) {
-      let checkout = { username, email, city, district, ward, number, phone, payment, totalPrice}
+      let checkout = { fullname: username, email, city, district, ward, number, phone, payment, totalPrice, atmNumber, atmBank}
 
-      if (isATM) {
-        checkout.atmNumber = atmNumber
-        checkout.atmBank = atmBank
-      }
+      checkout.username = this.props.authenticate.user.username
+
       this.setState({ errors: {}})
       this.props.userCheckoutRequest(checkout)
-      this.setState({ isFinish: true})
-      setTimeout(() => window.location.replace("/"), 5000)
+        .then(
+          res => {
+            this.setState({ isFinish: true})
+            setTimeout(() => window.location.replace("/"), 5000)
+          }
+        )
+        .catch(err => console.log(err))
     }
   }
 
@@ -458,5 +461,6 @@ export class CheckoutForm extends React.Component {
 
 CheckoutForm.propTypes = {
   cart: React.PropTypes.array.isRequired,
-  userCheckoutRequest: React.PropTypes.func.isRequired
+  userCheckoutRequest: React.PropTypes.func.isRequired,
+  authenticate: React.PropTypes.object.isRequired
 }

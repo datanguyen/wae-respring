@@ -29,7 +29,7 @@ public class IndexController {
     public String signIn(Model model) {
         Map<String, Object> appState = new HashMap<>();
         model.addAttribute("app", appState);
-        appState.put("authenticate", new UserSession());
+        appState.put("authenticate", null);
         return "app";
     }
 
@@ -42,7 +42,7 @@ public class IndexController {
     public String signUp(Model model) {
         Map<String, Object> appState = new HashMap<>();
         model.addAttribute("app", appState);
-        appState.put("authenticate", new UserSession());
+        appState.put("authenticate", null);
         return "app";
     }
 }

@@ -2,7 +2,7 @@ package wae.thesis.indiv.core.plugins;
 
 import lombok.Getter;
 import org.skife.jdbi.v2.DBI;
-import wae.thesis.indiv.api.ApiFetcher;
+import wae.thesis.indiv.api.util.ApiFetcher;
 import wae.thesis.indiv.api.ServiceBinder;
 import wae.thesis.indiv.api.behavior.ServiceBehavior;
 import wae.thesis.indiv.api.model.ServiceDef;

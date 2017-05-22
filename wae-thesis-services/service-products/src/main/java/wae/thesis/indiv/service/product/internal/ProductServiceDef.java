@@ -7,6 +7,7 @@ import wae.thesis.indiv.api.model.Action;
 import wae.thesis.indiv.api.model.ServiceDef;
 import wae.thesis.indiv.service.product.external.action.FetchProductAction;
 import wae.thesis.indiv.service.product.external.ProductBehavior;
+import wae.thesis.indiv.service.product.external.action.ProcessOrderAction;
 
 /**
  * Created by Nguyen Tan Dat.
@@ -37,6 +38,14 @@ public class ProductServiceDef extends ServiceDef {
                     new Action("view-handmade-products", ActionType.READ, UserRole.GUEST),
                     new FetchProductAction(productBehavior.getProductRepo())
               )
+        );
+
+        addSubService(new ServiceDef("process-order", "Process Order")
+                .addAllowedRoles(UserRole.GUEST)
+                .addActionHandler(
+                        new Action("process-order", ActionType.CREATE, UserRole.GUEST),
+                        new ProcessOrderAction(productBehavior.getProductRepo())
+                )
         );
     }
 }

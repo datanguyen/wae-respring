@@ -1,4 +1,4 @@
-package wae.thesis.indiv.service.product.internal.dao;
+package wae.thesis.indiv.service.product.internal.orm;
 
 import org.skife.jdbi.v2.StatementContext;
 import org.skife.jdbi.v2.tweak.ResultSetMapper;

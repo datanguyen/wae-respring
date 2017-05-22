@@ -1,4 +1,4 @@
-package wae.thesis.indiv.api;
+package wae.thesis.indiv.api.util;
 
 
 import com.mashape.unirest.http.HttpResponse;

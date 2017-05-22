@@ -3,9 +3,9 @@ package wae.thesis.indiv.service.product.internal.dao;
 import org.skife.jdbi.v2.sqlobject.Bind;
 import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.SqlUpdate;
-import org.skife.jdbi.v2.sqlobject.customizers.Mapper;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
 import wae.thesis.indiv.service.product.internal.model.Supplier;
+import wae.thesis.indiv.service.product.internal.orm.SupplierORM;
 
 import java.util.List;
 

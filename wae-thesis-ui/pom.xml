@@ -27,9 +27,9 @@
                         </goals>
                         <configuration>
                             <target>
-                                <exec executable="cmd" osfamily="windows" failonerror="true">
-                                    <arg line="/c npm install --no-color"/>
-                                </exec>
+                                <!--<exec executable="cmd" osfamily="windows" failonerror="true">-->
+                                    <!--<arg line="/c npm install &#45;&#45;no-color"/>-->
+                                <!--</exec>-->
                                 <exec executable="cmd" osfamily="windows" failonerror="true">
                                     <arg line="/c npm run build"/>
                                 </exec>

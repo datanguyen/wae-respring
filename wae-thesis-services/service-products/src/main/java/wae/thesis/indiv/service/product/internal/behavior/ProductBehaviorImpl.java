@@ -1,7 +1,7 @@
 package wae.thesis.indiv.service.product.internal.behavior;
 
 import org.skife.jdbi.v2.DBI;
-import wae.thesis.indiv.api.ApiFetcher;
+import wae.thesis.indiv.api.util.ApiFetcher;
 import wae.thesis.indiv.service.product.external.ProductBehavior;
 import wae.thesis.indiv.service.product.external.ProductRepository;
 

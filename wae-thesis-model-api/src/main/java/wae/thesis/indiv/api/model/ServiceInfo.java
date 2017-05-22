@@ -3,7 +3,7 @@ package wae.thesis.indiv.api.model;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
-import wae.thesis.indiv.api.ApiMessages;
+import wae.thesis.indiv.api.util.ApiMessages;
 import wae.thesis.indiv.api.exception.CoreException;
 import wae.thesis.indiv.api.item.ActionType;
 import wae.thesis.indiv.api.item.ErrorCode;
