@@ -10,7 +10,7 @@ import { SignInForm } from './signin.form'
     return(
       <Row>
         <Col xs={11} sm={6} md={4} smOffset={4} mdOffset={4}>
-          <SignInForm  userSignInRequest={userSignInRequest} />
+          <SignInForm userSignInRequest={userSignInRequest} />
         </Col>
       </Row>
     )

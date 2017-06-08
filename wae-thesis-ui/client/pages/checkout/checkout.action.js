@@ -21,3 +21,22 @@ export const userCheckoutRequest = (checkout) => {
     })
   }
 }
+
+export const userVerificationRequest = (phoneNumber) => {
+  return dispatch => {
+    return new Promise((resolve, reject) => {
+      let token = localStorage.jwtAuthorization
+      let url = `http://localhost:8001/api/product/verify-number`
+
+      axios.post(url, {}, {
+        headers: {'Authorization': token},
+        params: { phoneNumber }
+      })
+        .then(
+          res => {
+            resolve(res.data.code)
+          }
+        )
+    })
+  }
+}

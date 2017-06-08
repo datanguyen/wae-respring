@@ -1,4 +1,4 @@
-import {ADD_PRODUCT_CART, DELETE_PRODUCT_CART} from './cart.action.types'
+import { ADD_PRODUCT_CART, DELETE_PRODUCT_CART } from './cart.action.types'
 
 export const addProductCart = (product) => {
   let currentCart = localStorage.waeCart || []
@@ -12,6 +12,7 @@ export const addProductCart = (product) => {
 
   let index = JSON.parse(currentCart).findIndex(cartProduct => {
     let { productName, productPrice, productUrl } = cartProduct
+
     return productName === product.productName
       && productPrice === product.productPrice
       && productUrl === product.productUrl

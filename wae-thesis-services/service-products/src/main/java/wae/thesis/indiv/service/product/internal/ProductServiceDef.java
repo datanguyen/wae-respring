@@ -8,6 +8,7 @@ import wae.thesis.indiv.api.model.ServiceDef;
 import wae.thesis.indiv.service.product.external.action.FetchProductAction;
 import wae.thesis.indiv.service.product.external.ProductBehavior;
 import wae.thesis.indiv.service.product.external.action.ProcessOrderAction;
+import wae.thesis.indiv.service.product.external.action.VerifyCodeAction;
 
 /**
  * Created by Nguyen Tan Dat.
@@ -45,6 +46,14 @@ public class ProductServiceDef extends ServiceDef {
                 .addActionHandler(
                         new Action("process-order", ActionType.CREATE, UserRole.GUEST),
                         new ProcessOrderAction(productBehavior.getProductRepo())
+                )
+        );
+
+        addSubService(new ServiceDef("verify-number", "Verify Number")
+        .addAllowedRoles(UserRole.GUEST)
+                .addActionHandler(
+                        new Action("verify-number", ActionType.CREATE, UserRole.GUEST),
+                        new VerifyCodeAction()
                 )
         );
     }
