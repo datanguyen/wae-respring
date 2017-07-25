@@ -9,7 +9,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/wae?useSSL=false
     username: root
-    password: W@3-Dr3@ming
+    password: admin123
   jpa:
     generate-ddl: true
     show-sql: true
