@@ -35,6 +35,11 @@ yarn run dev
 yarn run prod
 ```
 
++ Build and Run in a single command :
+```bash
+yarns start
+```
+
 ### B. Build Server-Side
 ##### 1. Make sure you've installed:
 > [Java](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
