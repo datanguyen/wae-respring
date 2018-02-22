@@ -1,4 +1,4 @@
-# Web Application E-Commerce.
+# Web Application E-Commerce: Spring Technonolies + React/Redux.
 # Author: Nguyễn Tấn Đạt.
 # Deploy Project
 ### A. Build Client-Side
