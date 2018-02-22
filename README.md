@@ -37,7 +37,7 @@ yarn run prod
 
 + Build and Run in a single command :
 ```bash
-yarns start
+yarn start
 ```
 
 ### B. Build Server-Side
