@@ -42,7 +42,7 @@ cd..
 mvn clean install
 ```
 
-###C. Run Project
+### C. Run Project
 ##### 1. Direct to Application Module
 ```bash
 cd wae-thesis-application
