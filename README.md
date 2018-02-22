@@ -1,7 +1,7 @@
 # Web Application E-Commerce.
 # Author: Nguyễn Tấn Đạt.
-#Deploy Project
-###A. Build Client-Side
+# Deploy Project
+### A. Build Client-Side
 ##### 1. Make sure you've installed:
 > [Nodejs](https://nodejs.org/en/)
 
@@ -24,7 +24,7 @@ npm install
 npm run build
 ```
 
-###B. Build Server-Side
+### B. Build Server-Side
 ##### 1. Make sure you've installed:
 > [Java](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
 
@@ -43,11 +43,11 @@ mvn clean install
 ```
 
 ###C. Run Project
-#####1. Direct to Application Module
+##### 1. Direct to Application Module
 ```bash
 cd wae-thesis-application
 ```
-#####2. Run
+##### 2. Run
 + Development Mode :
 ```bash
 mvn spring-boot:run
